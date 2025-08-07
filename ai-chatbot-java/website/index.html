@@ -8,12 +8,26 @@
 </head>
 <body>
     <div class="chat-container">
+        <header>
+            <h2>AI Chatbot</h2>
+            <span class="status" id="status">Online</span>
+        </header>
         <div class="chat-box" id="chat-box">
             <!-- Conversation history will be displayed here -->
         </div>
-        <input type="text" id="user-input" placeholder="Type your message here..." />
-        <button id="send-button">Send</button>
+        <div class="input-row">
+            <input type="text" id="user-input" placeholder="Type your message here..." autocomplete="off" />
+            <button id="send-button">Send</button>
+        </div>
+        <div id="loading" class="loading" style="display:none;">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
     </div>
+    <footer>
+        <p>Powered by Java & Spark | <a href="https://github.com/enfieldr/AI_Chatbot_Web_Java" target="_blank">GitHub</a></p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

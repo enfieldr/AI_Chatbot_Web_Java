@@ -1,20 +1,17 @@
 import static spark.Spark.*;
+import com.google.gson.*;
 
 public class Server {
-    public static void main(String[] args) {
-        // Set the port for the server
+    public static void start(IntentMatcher matcher) {
         port(4567);
-
-        // Define the endpoint for receiving user messages
-        post("/chat", (request, response) -> {
-            String userMessage = request.queryParams("message");
-            // Process the user message and generate a response
-            String botResponse = NLPProcessor.processMessage(userMessage);
-            response.type("application/json");
-            return "{\"response\": \"" + botResponse + "\"}";
+        post("/chat", (req, res) -> {
+            res.type("application/json");
+            JsonObject reqJson = JsonParser.parseString(req.body()).getAsJsonObject();
+            String userMessage = reqJson.get("message").getAsString();
+            String reply = matcher.matchIntent(userMessage);
+            JsonObject respJson = new JsonObject();
+            respJson.addProperty("reply", ResponseGenerator.generate(reply));
+            return respJson.toString();
         });
-
-        // Start the server
-        System.out.println("Server is running on http://localhost:4567");
     }
 }

@@ -1,0 +1,22 @@
+{
+  "greeting": {
+    "patterns": ["Hi", "Hello", "Hey there"],
+    "responses": ["Hi!", "Hello, how can I assist you?", "Greetings!"]
+  },
+  "goodbye": {
+    "patterns": ["Bye", "Goodbye", "See you later"],
+    "responses": ["Goodbye!", "See you later!", "Take care!"]
+  },
+  "thanks": {
+    "patterns": ["Thanks", "Thank you", "Appreciate it"],
+    "responses": ["You're welcome!", "No problem!", "Glad to help!"]
+  },
+  "help": {
+    "patterns": ["Help", "I need assistance", "Can you help me?"],
+    "responses": ["Sure! What do you need help with?", "I'm here to assist you!", "How can I help you today?"]
+  },
+  "weather": {
+    "patterns": ["What's the weather like?", "Tell me the weather", "Is it going to rain?"],
+    "responses": ["I'm not sure about the weather, but you can check a weather website!", "I can't provide weather updates, but I can help with other questions."]
+  }
+}

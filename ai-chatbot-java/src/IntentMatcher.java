@@ -12,6 +12,7 @@ public class IntentMatcher {
     }
 
     public String matchIntent(String userInput) {
+        // If you have NLPProcessor.java in the same folder, this works.
         String input = NLPProcessor.process(userInput);
         for (Intent intent : intents.values()) {
             for (String pattern : intent.getPatterns()) {
